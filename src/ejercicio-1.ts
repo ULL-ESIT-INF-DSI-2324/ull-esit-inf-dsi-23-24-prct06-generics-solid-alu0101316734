@@ -1,4 +1,4 @@
-interface enseres_interface{
+export interface enseres_interface{
     nombre:string;
     peso:number;
     n_enseres:number;
@@ -9,9 +9,9 @@ interface enseres_interface{
 
 
 export class caja{
-    protected _enseres:Array<enseres>
+    protected _enseres:Array<enseres_interface>
     private _max_peso:number=0;
-    constructor(enseres:enseres[],_max_peso:number){
+    constructor(enseres:enseres_interface[],_max_peso:number){
       this._enseres=enseres;
       this._max_peso=_max_peso;
     }
@@ -38,7 +38,7 @@ export class caja{
         });
         return existe;
     }
-    nuevo_enser(enser_nuevo:enseres):void{   
+    nuevo_enser(enser_nuevo:enseres_interface):void{   
       if(this.buscar_enser(enser_nuevo.nombre))
          this._enseres.forEach(element =>{
            if(element.nombre === enser_nuevo.nombre)
@@ -61,9 +61,3 @@ export class caja{
 }
 
 
-export class enseres implements enseres_interface{
-    constructor(public nombre:string,public peso:number,public n_enseres:number){
-      if(n_enseres < 0 || peso < 0)
-        throw new Error('El numero tiene que ser mayor que 0');
-    }
-}

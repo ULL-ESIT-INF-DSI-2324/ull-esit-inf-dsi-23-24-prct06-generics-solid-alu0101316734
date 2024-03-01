@@ -9,7 +9,8 @@ interface Bill_interface{
 
 export abstract class Bill implements Bill_interface{
   constructor(public cantidad:number,public descripcion:string,public precio:number){
-
+    if(cantidad < 0 || precio < 0 || descripcion === "")
+       throw new Error("Los argumentos no son permitidos");
   }
   abstract generate():string;
 }
@@ -21,7 +22,7 @@ constructor(public cantidad:number,public descripcion:string,public precio:numbe
    generate(): string {
       let formato:string="";
       formato+="cantidad     descripcion     precio" + "\n";
-      formato+="${cantidad}     ${descripcion}     ${precio}"
+      formato+= this.cantidad + " " +this.descripcion + " "+ this.precio + "\n"
       return formato;
    }
 }
@@ -34,9 +35,9 @@ export class PDF extends Bill{
      }    
     generate(): string {
         let formato:string="";
-        formato+="cantidad:${cantidad} " + "\n";
-        formato+="descripcion:${descripcion} " + "\n";
-        formato+="precio:${precio} " + "\n";
+        formato+="cantidad:" + this.cantidad  + "\n";
+        formato+="descripcion:" + this.descripcion + "\n";
+        formato+="precio:" + this.precio + "\n";
            return formato;
     }
 }   
