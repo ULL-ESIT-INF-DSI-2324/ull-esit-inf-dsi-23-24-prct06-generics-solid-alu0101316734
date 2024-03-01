@@ -57,4 +57,24 @@ describe('Ejercicio 1 - Gestión de mudanza',() => {
      caja1.eliminar_enser("mueble");
      expect(caja1.buscar_enser("mueble")).to.be.equal(false);
    })
+   it('Comprobamos si eliminamos más enseres de la caja',()=>{
+      const enser: enseres_interface = {
+         nombre: "mueble",
+         peso: 20,
+         n_enseres: 2
+     };     
+     let caja1 = new caja([enser],40)
+     caja1.eliminar_enser("mueble");
+     expect(caja1.es_peso_max()).to.be.equal(false);
+   })
+   it('Comprobamos si áñadimos más enseres de la caja',()=>{
+      const enser: enseres_interface = {
+         nombre: "mueble",
+         peso: 20,
+         n_enseres: 1
+     }; 
+     let caja1 = new caja([enser],40);
+      caja1.nuevo_enser(enser);
+     expect(caja1.es_peso_max()).to.be.equal(true);
+   })
 })

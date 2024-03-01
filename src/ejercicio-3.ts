@@ -1,10 +1,12 @@
 import * as fs from 'fs';
 
-export class FileManager {
+/**@class File Manager gestiona el fichero y su lectura */
+export class ReadFile {
+  /**@constructor */
   constructor(protected filePath: string) {
   }
 
-  // Reads file
+  /** @public lee el fichero de la ruta especificada */
   public readFile(): string {
     try {
       const content: string = fs.readFileSync(this.filePath, 'utf-8');
@@ -15,13 +17,13 @@ export class FileManager {
     }
   }
 }
-
-export class WriteFileManager extends FileManager {
-  constructor(filePath: string) {
-    super(filePath);
+/** @class fichero para escribir */
+export class WriteFile {
+  /** @constructor */
+  constructor(private filePath: string) {
   }   
 
-  // Writes file
+  /** @public escribir en el fichero espesificado */
   public writeFile(data: string): void {
     try {
       fs.writeFileSync(this.filePath, data, 'utf-8');

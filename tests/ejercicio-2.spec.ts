@@ -8,7 +8,7 @@ describe('Ejercicio 2 - Generador de facturas',() =>{
         const pdf = new PDF(1,"muebles",100)
         expect(pdf.generate()).to.be.equal("cantidad:1\ndescripcion:muebles\nprecio:100\n");
     })
-    it('Comprobamos que funciona para PDF',() =>{
+    it('Comprobamos que funciona para HTML',() =>{
         const html = new HTML(1,"muebles",100)
         expect(html.generate()).to.be.equal("cantidad     descripcion     precio\n1 muebles 100\n" );
     })

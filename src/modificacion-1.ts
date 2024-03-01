@@ -15,9 +15,10 @@ export class ArithmeticableCollection <T extends Arithmeticable<T>>{
     addArithmeticable(New_coleccion:T):void{
       this.coleccion.push(New_coleccion);
     }
-    getArithmeticable(aritmetia:T):number |undefined{
-        return this.coleccion.findIndex(numero => {});
-        
+    getArithmeticable(index:number):T |undefined{
+       if(index <0 || index > this.coleccion.length)
+         return undefined
+       return this.coleccion[index];
     }
     getNumberOfArithmeticables():number{
         return this.coleccion.length;
@@ -130,13 +131,13 @@ export class Complex implements Arithmeticable<Complex>
     return new Complex(i,r);      
    }
    multiply(n:Complex): Complex| undefined {
-    let i:number= this.i+n.i;
-    let r:number= this.r+n.r;
+    let i:number= this.i*n.i;
+    let r:number= this.r*n.r;
     return new Complex(i,r);
    }
    divide(n:Complex): Complex| undefined {
-      let i:number= this.i+n.i;
-      let r:number= this.r+n.r;
+      let i:number= this.i/n.i;
+      let r:number= this.r/n.r;
       return new Complex(i,r);   
    }
 }

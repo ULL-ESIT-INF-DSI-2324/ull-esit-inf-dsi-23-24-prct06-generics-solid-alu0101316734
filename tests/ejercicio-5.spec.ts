@@ -12,6 +12,6 @@ describe('Ejercicio 5 - Servicio de mensajería',() =>{
    it('Comprabamos si funciona la notificación por SMS',()=>{
     const email = new EmailService(); 
     const notificacion = new Notifier(email);
-    expect(notificacion.sendNotification('Esto es un mensaje')).to.be.equal('Sending notification by SMS: Esto es un mensaje');
+    expect(notificacion.sendNotification('Esto es un mensaje')).to.be.equal('Sending notification by email: Esto es un mensaje');
  })   
 })
