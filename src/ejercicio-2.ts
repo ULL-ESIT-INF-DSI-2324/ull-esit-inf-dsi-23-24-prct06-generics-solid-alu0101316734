@@ -1,5 +1,5 @@
 /** @interface Bill_interface */
-interface Bill_interface{
+export interface Bill_interface{
   cantidad:number;
   generate():string;
   descripcion:string
