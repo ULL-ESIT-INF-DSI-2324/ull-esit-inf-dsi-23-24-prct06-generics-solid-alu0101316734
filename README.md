@@ -254,6 +254,8 @@ export class Complex implements Arithmeticable<Complex>
 
 [![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct06-generics-solid-alu0101316734/badge.svg?branch=main)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct06-generics-solid-alu0101316734?branch=main)
 
+[![Tests](https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct06-generics-solid-alu0101316734/actions/workflows/node.js.yml/badge.svg)](https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct06-generics-solid-alu0101316734/actions/workflows/node.js.yml)
+
 ## Conclusión
 
 Los principios __SOLID__ son unos principios muy importante y a tener en cuenta cuando progrmamos en POO:Porque nos ayuda a que nuestras clases sean con un buen diseño.Personalemnte creo que esta práctica ha sido muy sencilla además que empiezo a ver ciertos patrones que ayudan aa cumplir dichos pricipios.
